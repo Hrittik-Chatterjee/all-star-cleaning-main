@@ -51,7 +51,7 @@ const cms = homepageData;
     <!-- Background image with dark blue overlay -->
     <div class="absolute inset-0 z-0">
       <img
-        src="/images/hero-bg.jpg"
+        src={cms.heroImage}
         alt="All Star Cleaning — sparkling clean Ottawa home"
         role="presentation"
         width="1344"
@@ -113,7 +113,7 @@ const cms = homepageData;
         <div class="fade-in relative order-2 lg:order-1">
           <div class="overflow-hidden rounded-2xl shadow-lg">
             <img
-              src="/images/team-at-work.jpg"
+              src={cms.teamImage}
               alt={isFr ? "L'équipe All Star Cleaning au travail à Ottawa" : 'All Star Cleaning crew at work in Ottawa'}
               width="1344"
               height="768"
@@ -320,7 +320,7 @@ const cms = homepageData;
       <!-- Before/After image -->
       <div class="fade-in delay-3 mt-14 overflow-hidden rounded-2xl shadow-lg">
         <img
-          src="/images/before-after.jpg"
+          src={cms.beforeAfterImage}
           alt={isFr ? 'Résultats avant et après le nettoyage extérieur' : 'Before and after exterior cleaning results'}
           width="1344"
           height="768"
@@ -338,7 +338,7 @@ const cms = homepageData;
     <!-- Background image with overlay -->
     <div class="absolute inset-0 z-0">
       <img
-        src="/images/cta-bg.jpg"
+        src={cms.ctaImage}
         alt="Clean home exterior ready for service"
         role="presentation"
         width="1344"
