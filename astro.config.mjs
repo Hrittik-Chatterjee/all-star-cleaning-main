@@ -1,6 +1,9 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import react from '@astrojs/react';
+import markdoc from '@astrojs/markdoc';
+import keystatic from '@keystatic/astro';
 
 /**
  * Tech-Stack Obfuscation Vite Plugin
@@ -100,9 +103,9 @@ export default defineConfig({
   },
 
   integrations: [
-    // @astrojs/react REMOVED — no client: directives or React components used
-    // The React integration was shipping a 193KB dead client.BSJhIU5Y.js
-    // that leaked React + Astro hydration fingerprints
+    react(),
+    markdoc(),
+    keystatic(),
     sitemap({
       i18n: {
         defaultLocale: 'en',
@@ -114,7 +117,7 @@ export default defineConfig({
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'fr'],
-    routing: { prefixDefaultLocale: true },
+    routing: 'manual',
   },
 
   vite: {

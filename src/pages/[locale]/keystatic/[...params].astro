@@ -1,0 +1,10 @@
+---
+import { makePage } from '@keystatic/astro/ui';
+import config from '../../../../keystatic.config';
+
+export const all = makePage(config);
+
+const { params } = Astro.params;
+---
+
+{all}
