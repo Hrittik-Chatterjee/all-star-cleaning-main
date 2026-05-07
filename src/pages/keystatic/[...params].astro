@@ -1,19 +1,9 @@
 ---
-import KeystaticApp from '../../components/KeystaticApp';
+import { makePage } from '@keystatic/astro/ui';
+import config from '../../keystatic.config';
 
-export function getStaticPaths() {
-  return [{ params: { params: undefined } }];
-}
+export const prerender = false;
+export const all = makePage(config);
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Keystatic CMS</title>
-  </head>
-  <body>
-    <KeystaticApp client:only="react" />
-  </body>
-</html>
+{all}

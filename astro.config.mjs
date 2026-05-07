@@ -3,6 +3,8 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import react from '@astrojs/react';
 import markdoc from '@astrojs/markdoc';
+import keystatic from '@keystatic/astro';
+import cloudflare from '@astrojs/cloudflare';
 
 /**
  * Tech-Stack Obfuscation Vite Plugin
@@ -88,6 +90,7 @@ function stripHtmlComments() {
 
 export default defineConfig({
   output: 'static',
+  adapter: cloudflare(),
   site: 'https://allstarcleaning.ca',
 
   // === TECH-STACK OBFUSCATION ===
@@ -104,6 +107,7 @@ export default defineConfig({
   integrations: [
     react(),
     markdoc(),
+    keystatic(),
     sitemap({
       i18n: {
         defaultLocale: 'en',
